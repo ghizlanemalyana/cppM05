@@ -2,6 +2,7 @@
 #define BEREAUCRAT_HPP
 
 #include <iostream>
+#include <string>
 
 class Bureaucrat{
 	private:
@@ -13,6 +14,7 @@ class Bureaucrat{
 		Bureaucrat(const Bureaucrat &other);
 		Bureaucrat &operator=(const Bureaucrat &other);
 		~Bureaucrat();
+
 	class GradeTooHighException : public std::exception{
 		public:
 			virtual const char * what() const throw(){
@@ -25,10 +27,12 @@ class Bureaucrat{
 				return "Grade is too low (maximum is 150)";
 			}
 	};
-	std::string getGrade();
-	void setName(std::string name);
+	int getGrade() const;
+	const std::string getName() const; // is it nececcery to use &?
 
-	void incrementGrade(void);
-	void decrementGrade(void);
+	void incrementGrade();
+	void decrementGrade();
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
 #endif
