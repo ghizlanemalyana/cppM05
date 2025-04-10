@@ -1,5 +1,5 @@
-#ifndef BEREAUCRAT_HPP
-#define BEREAUCRAT_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <string>
@@ -7,7 +7,7 @@
 class Bureaucrat{
 	private:
 		const std::string name;
-		int grade;
+		int grade; 
 	public:
 		Bureaucrat();
 		Bureaucrat(const std::string name, int grade);
@@ -17,15 +17,11 @@ class Bureaucrat{
 
 	class GradeTooHighException : public std::exception{
 		public:
-			virtual const char * what() const throw(){
-				return "Grade is too high (minimum is 1)";
-			}
+			virtual const char * what() const throw();
 	};
 	class GradeTooLowException : public std::exception{
 		public:
-			virtual const char * what() const throw(){
-				return "Grade is too low (maximum is 150)";
-			}
+			virtual const char * what() const throw();
 	};
 	int getGrade() const;
 	const std::string getName() const; // is it nececcery to use &?
