@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmalyana <gmalyana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/15 17:37:21 by gmalyana          #+#    #+#             */
-/*   Updated: 2025/04/16 14:34:22 by gmalyana         ###   ########.fr       */
+/*   Created: 2025/04/16 14:33:42 by gmalyana          #+#    #+#             */
+/*   Updated: 2025/04/16 14:39:54 by gmalyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
 Bureaucrat::Bureaucrat(): name("ghizlane"){
