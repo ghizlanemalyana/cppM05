@@ -6,7 +6,7 @@
 /*   By: gmalyana <gmalyana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:34:53 by gmalyana          #+#    #+#             */
-/*   Updated: 2025/04/16 14:40:24 by gmalyana         ###   ########.fr       */
+/*   Updated: 2025/04/19 15:42:16 by gmalyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class Bureaucrat{
 	void incrementGrade();
 	void decrementGrade();
 	void signForm(AForm &form);
+	void executeForm(const AForm &form);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);

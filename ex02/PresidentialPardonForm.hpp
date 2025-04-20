@@ -6,7 +6,7 @@
 /*   By: gmalyana <gmalyana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 21:22:44 by gmalyana          #+#    #+#             */
-/*   Updated: 2025/04/18 21:25:52 by gmalyana         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:29:07 by gmalyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 #include <iostream>
 #include "AForm.hpp"
 
-class presidentialpardonform : public AForm {
+class AForm;
+
+class PresidentialPardonForm : public AForm {
 	private:
 		std::string target;
 	public:
-		presidentialpardonform(const std::string &target);
+		PresidentialPardonForm(const std::string &target);
 		void executeAction() const;
 };
 

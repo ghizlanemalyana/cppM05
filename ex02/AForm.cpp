@@ -6,7 +6,7 @@
 /*   By: gmalyana <gmalyana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:35:14 by gmalyana          #+#    #+#             */
-/*   Updated: 2025/04/18 21:44:14 by gmalyana         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:44:01 by gmalyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ const char * AForm::GradeTooLowException::what() const throw(){
 	return "Grade is too low (maximum is 150)";
 }
 
-void AForm::beSigned(const Bureaucrat &bureaucrat)const {
+void AForm::beSigned(const Bureaucrat &bureaucrat) { // it was const
     if (bureaucrat.getGrade() > gradeToSign) {
         throw AForm::GradeTooLowException();  // This immediately exits the function
     }
@@ -66,10 +66,13 @@ std::ostream& operator<<(std::ostream& os, const AForm& form){
 	os << form.getName() << ", form grade to sign " << form.getGradeToSign() << ", form grade to execute " << form.getGradeToExecute() << ".";
 	return os;
 }
-// void AForm::execute(const Bureaucrat &executor) const {
-//     if (!_isSigned)
-//         throw NotSignedException();  // Custom exception
-//     if (executor.getGrade() > _gradeToExecute)
-//         throw GradeTooLowException();
-//     executeAction();  // Calls the concrete form's action
-// }
+const char * AForm::NotSignedException::what() const throw(){
+	return "Form is not signed";
+}
+void AForm::execute(const Bureaucrat &executor) const {
+    if (!isSigned)
+        throw NotSignedException();  // Custom exception
+    if (executor.getGrade() > gradeToExecute)
+        throw GradeTooLowException();
+    executeAction();  // Calls the concrete form's action
+}

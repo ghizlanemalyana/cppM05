@@ -1,6 +1,6 @@
 cmd = c++
 flags = -Wall -Wextra -Werror -std=c++98
-sources = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+sources = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 objs = $(sources:.cpp=.o)
 NAME = Bureaucrat
 
@@ -9,7 +9,7 @@ all: $(NAME)
 $(NAME): $(objs) 
 	$(cmd) $(flags) $(objs) -o $(NAME)
 
-%.o: %.cpp Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+%.o: %.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 	$(cmd) $(flags) -c $< -o $@
 
 clean:

@@ -6,7 +6,7 @@
 /*   By: gmalyana <gmalyana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 14:35:39 by gmalyana          #+#    #+#             */
-/*   Updated: 2025/04/18 21:41:36 by gmalyana         ###   ########.fr       */
+/*   Updated: 2025/04/19 21:44:14 by gmalyana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,11 @@ class AForm{
 		public:
 			virtual const char * what () const throw();
 	};
-
-	void beSigned(const Bureaucrat &bureaucrat) const;
+	class NotSignedException : public std::exception {
+		public:
+			virtual const char * what() const throw();
+	};
+	void beSigned(const Bureaucrat &bureaucrat);
 	// to make the class abstruct
 	virtual void executeAction() const = 0;
 	void execute(const Bureaucrat &executor) const;
